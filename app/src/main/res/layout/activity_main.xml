@@ -11,12 +11,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/colorPrimary"
-        android:text="@string/hello"
+        android:text="@string/button1"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"/>
     <TextView
         android:id="@+id/topLeft"
-        android:text="@string/hello"
+        android:text="@string/button_2"
         android:textColor="@color/colorPrimary"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -24,7 +24,7 @@
         app:layout_constraintTop_toTopOf="parent"/>
     <TextView
         android:id="@+id/bottomLeft"
-        android:text="@string/hello"
+        android:text="@string/button_3"
         android:textColor="@color/colorPrimary"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -32,7 +32,7 @@
         app:layout_constraintLeft_toLeftOf="parent"/>
     <TextView
         android:id="@+id/bottomRight"
-        android:text="@string/hello"
+        android:text="@string/button_4"
         android:textColor="@color/colorPrimary"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
