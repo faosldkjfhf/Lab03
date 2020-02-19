@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     TextView bottomRight;
     TextView topRight;
     TextView topLeft;
+    SeekBar seekbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
         topLeft = findViewById(R.id.topLeft);
         topRight = findViewById(R.id.topRight);
         bottomRight = findViewById(R.id.bottomRight);
+        seekbar = findViewById(R.id.seekbar);
+        editor.apply();
         View.OnClickListener click = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -45,5 +49,25 @@ public class MainActivity extends AppCompatActivity {
         topLeft.setOnClickListener(click);
         topRight.setOnClickListener(click);
 
+        seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                bottomLeft.setTextSize(Float.valueOf(progress));
+                bottomRight.setTextSize(Float.valueOf(progress));
+                topLeft.setTextSize(Float.valueOf(progress));
+                topRight.setTextSize(Float.valueOf(progress));
+
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
     }
 }
